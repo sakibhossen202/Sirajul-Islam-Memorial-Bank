@@ -1,7 +1,7 @@
 document.getElementById("submit-button").addEventListener("click",function(){
     console.log("submit button clicked");
-    document.getElementById("checkBalance-section").style.display ="block"
     document.getElementById("input-section").style.display ="none"
+    document.getElementById("checkBalance-section").style.display ="block"
     
 })
 
@@ -47,10 +47,11 @@ document.getElementById("withdrawBtn").addEventListener("click", function(){
 
     let withdrawCurrency = toInputConvert("withdrawAmount")
     
-    updateSpanText("withdrawCount",withdrawCurrency)
+    updateSpanText("withdrawCount",withdrawCurrency);
 
     document.getElementById("withdrawAmount").value = "";
 
 
-    // Net balance section
+   
+    updateSpanText("currentBalance",-1*withdrawCurrency)
 })
